@@ -3,6 +3,9 @@
 # top-most EditorConfig file
 root = true
 
+#############
+## GENERAL ##
+#############
 # Don't use tabs for indentation.
 [*]
 indent_style = space
@@ -12,23 +15,12 @@ charset = utf-8-bom
 spelling_exclusion_path = SpellingExclusions.dic
 max_line_length = 120
 
-# Code files
-[*.{cs,csx,vb,vbx}]
+# C# files
+[*.{cs,csx}]
 indent_size = 4
 insert_final_newline = true
 charset = utf-8-bom
 trim_trailing_whitespace = true
-
-# XML project files
-[*.{csproj,vbproj,vcxproj,vcxproj.filters,proj,projitems,shproj}]
-indent_size = 2
-
-# XML config files
-[*.{props,targets,ruleset,config,nuspec,resx,vsixmanifest,vsct}]
-indent_size = 2
-# Generated code
-[*{_AssemblyInfo.cs,.notsupported.cs,AsmOffsets.cs}]
-generated_code = true
 
 # JSON files
 [*.json]
@@ -37,10 +29,6 @@ indent_size = 4
 # Powershell files
 [*.ps1]
 indent_size = 2
-
-# Generated code
-[*{_AssemblyInfo.cs,.notsupported.cs,AsmOffsets.cs}]
-generated_code = true
 
 # C++ Files
 [*.{cpp,h,in}]
@@ -71,9 +59,32 @@ end_of_line = lf
 [*.{cmd,bat}]
 end_of_line = crlf
 
-# Dotnet code style settings:
-[*.{cs,vb}]
+# Markdown files
+[*.md]
+trim_trailing_whitespace = false
+indent_size = 2
+end_of_line = lf
 
+
+###########
+## UNITY ##
+###########
+# Generated code
+[*{_AssemblyInfo.cs,.notsupported.cs,AsmOffsets.cs}]
+generated_code = true
+
+# XML project files
+[*.{csproj,vbproj,vcxproj,vcxproj.filters,proj,projitems,shproj}]
+indent_size = 2
+
+# XML config files
+[*.{props,targets,ruleset,config,nuspec,resx,vsixmanifest,vsct}]
+indent_size = 2
+
+#####################
+## C# MAIN RULESET ##
+#####################
+[*.cs]
 # Sort using and Import directives with System.* appearing first
 dotnet_sort_system_directives_first = true
 dotnet_separate_import_directive_groups = false
@@ -98,7 +109,7 @@ dotnet_style_explicit_tuple_names = true:suggestion
 dotnet_style_allow_multiple_blank_lines_experimental = false
 
 # Non-private static fields are PascalCase
-dotnet_naming_rule.non_private_static_fields_should_be_pascal_case.severity = suggestion
+dotnet_naming_rule.non_private_static_fields_should_be_pascal_case.severity = warning
 dotnet_naming_rule.non_private_static_fields_should_be_pascal_case.symbols = non_private_static_fields
 dotnet_naming_rule.non_private_static_fields_should_be_pascal_case.style = non_private_static_field_style
 
@@ -109,7 +120,7 @@ dotnet_naming_symbols.non_private_static_fields.required_modifiers = static
 dotnet_naming_style.non_private_static_field_style.capitalization = pascal_case
 
 # Non-private readonly fields are PascalCase
-dotnet_naming_rule.non_private_readonly_fields_should_be_pascal_case.severity = suggestion
+dotnet_naming_rule.non_private_readonly_fields_should_be_pascal_case.severity = warning
 dotnet_naming_rule.non_private_readonly_fields_should_be_pascal_case.symbols = non_private_readonly_fields
 dotnet_naming_rule.non_private_readonly_fields_should_be_pascal_case.style = non_private_readonly_field_style
 
@@ -120,7 +131,7 @@ dotnet_naming_symbols.non_private_readonly_fields.required_modifiers = readonly
 dotnet_naming_style.non_private_readonly_field_style.capitalization = pascal_case
 
 # Constants are PascalCase
-dotnet_naming_rule.constants_should_be_pascal_case.severity = suggestion
+dotnet_naming_rule.constants_should_be_pascal_case.severity = warning
 dotnet_naming_rule.constants_should_be_pascal_case.symbols = constants
 dotnet_naming_rule.constants_should_be_pascal_case.style = constant_style
 
@@ -130,7 +141,7 @@ dotnet_naming_symbols.constants.required_modifiers = const
 dotnet_naming_style.constant_style.capitalization = pascal_case
 
 # Static fields are camelCase and start with s_
-dotnet_naming_rule.static_fields_should_be_camel_case.severity = suggestion
+dotnet_naming_rule.static_fields_should_be_camel_case.severity = warning
 dotnet_naming_rule.static_fields_should_be_camel_case.symbols = static_fields
 dotnet_naming_rule.static_fields_should_be_camel_case.style = static_field_style
 
@@ -141,7 +152,7 @@ dotnet_naming_style.static_field_style.capitalization = camel_case
 dotnet_naming_style.static_field_style.required_prefix = s_
 
 # Instance fields are camelCase and start with _
-dotnet_naming_rule.instance_fields_should_be_camel_case.severity = suggestion
+dotnet_naming_rule.instance_fields_should_be_camel_case.severity = warning
 dotnet_naming_rule.instance_fields_should_be_camel_case.symbols = instance_fields
 dotnet_naming_rule.instance_fields_should_be_camel_case.style = instance_field_style
 
@@ -151,7 +162,7 @@ dotnet_naming_style.instance_field_style.capitalization = camel_case
 dotnet_naming_style.instance_field_style.required_prefix = _
 
 # Locals and parameters are camelCase
-dotnet_naming_rule.locals_should_be_camel_case.severity = suggestion
+dotnet_naming_rule.locals_should_be_camel_case.severity = warning
 dotnet_naming_rule.locals_should_be_camel_case.symbols = locals_and_parameters
 dotnet_naming_rule.locals_should_be_camel_case.style = camel_case_style
 
@@ -160,7 +171,7 @@ dotnet_naming_symbols.locals_and_parameters.applicable_kinds = parameter, local
 dotnet_naming_style.camel_case_style.capitalization = camel_case
 
 # Local functions are PascalCase
-dotnet_naming_rule.local_functions_should_be_pascal_case.severity = suggestion
+dotnet_naming_rule.local_functions_should_be_pascal_case.severity = warning
 dotnet_naming_rule.local_functions_should_be_pascal_case.symbols = local_functions
 dotnet_naming_rule.local_functions_should_be_pascal_case.style = local_function_style
 
@@ -169,7 +180,7 @@ dotnet_naming_symbols.local_functions.applicable_kinds = local_function
 dotnet_naming_style.local_function_style.capitalization = pascal_case
 
 # By default, name items with PascalCase
-dotnet_naming_rule.members_should_be_pascal_case.severity = suggestion
+dotnet_naming_rule.members_should_be_pascal_case.severity = warning
 dotnet_naming_rule.members_should_be_pascal_case.symbols = all_members
 dotnet_naming_rule.members_should_be_pascal_case.style = pascal_case_style
 
@@ -186,8 +197,6 @@ dotnet_public_api_analyzer.require_api_files = true
 # Workaround for https://github.com/dotnet/roslyn/issues/70570
 dotnet_diagnostic.IDE0055.severity = warning
 
-# CSharp code style settings:
-[*.cs]
 # Newline settings
 csharp_new_line_before_open_brace = all
 csharp_new_line_before_else = true
@@ -212,10 +221,10 @@ csharp_style_allow_blank_line_after_colon_in_constructor_initializer_experimenta
 csharp_style_allow_blank_line_after_token_in_conditional_expression_experimental = false
 csharp_style_allow_blank_line_after_token_in_arrow_expression_clause_experimental = false
 
-# Prefer "var" everywhere
-csharp_style_var_for_built_in_types = true:suggestion
-csharp_style_var_when_type_is_apparent = true:suggestion
-csharp_style_var_elsewhere = true:suggestion
+# "var" only when type is apparent
+csharp_style_var_for_built_in_types = false:warning
+csharp_style_var_when_type_is_apparent = true:warning
+csharp_style_var_elsewhere = false:warning
 
 # Prefer method-like constructs to have a block body
 csharp_style_expression_bodied_methods = false:none
@@ -267,13 +276,128 @@ csharp_preserve_single_line_statements = true
 # IDE0060: Remove unused parameter
 dotnet_diagnostic.IDE0060.severity = warning
 
-[src/{Compilers,ExpressionEvaluator,Scripting}/**Test**/*.{cs,vb}]
+######################
+## C# UNITY RULESET ##
+######################
+[*.cs]
+# UNT0001::Performance Empty Unity message
+dotnet_diagnostic.UNT0001.severity = warning
 
+# UNT0002::Performance Inefficient tag comparison
+dotnet_diagnostic.UNT0002.severity = warning
+
+# UNT0003::Type Safety Usage of non generic GetComponent
+dotnet_diagnostic.UNT0003.severity = warning
+
+# UNT0004::Correctness Time.fixedDeltaTime used with Update
+dotnet_diagnostic.UNT0004.severity = warning
+
+# UNT0006::Type Safety Incorrect message signature
+dotnet_diagnostic.UNT0006.severity = warning
+
+# UNT0007::Correctness Null coalescing on Unity objects
+dotnet_diagnostic.UNT0007.severity = warning
+
+# UNT0008::Correctness Null propagation on Unity objects
+dotnet_diagnostic.UNT0008.severity = warning
+
+# UNT0009::Correctness Missing static constructor with InitializeOnLoad
+dotnet_diagnostic.UNT0009.severity = warning
+
+# UNT0010::Type Safety Component instance creation
+dotnet_diagnostic.UNT0010.severity = warning
+
+# UNT0011::Type Safety ScriptableObject instance creation
+dotnet_diagnostic.UNT0011.severity = warning
+
+# UNT0012::Correctness Unused coroutine return value
+dotnet_diagnostic.UNT0012.severity = warning
+
+# UNT0013::Correctness Invalid or redundant SerializeField attribute
+dotnet_diagnostic.UNT0013.severity = warning
+
+# UNT0014::Type Safety GetComponent called with non-Component or non-Interface type
+dotnet_diagnostic.UNT0014.severity = warning
+
+# UNT0015::Type Safety Incorrect method signature with InitializeOnLoadMethod, RuntimeInitializeOnLoadMethod or DidReloadScripts attribute
+dotnet_diagnostic.UNT0015.severity = warning
+
+# UNT0016::Type Safety Unsafe way to get the method name
+dotnet_diagnostic.UNT0016.severity = warning
+
+# UNT0017::Performance SetPixels invocation is slow
+dotnet_diagnostic.UNT0017.severity = warning
+
+# UNT0018::Performance System.Reflection features in performance critical messages
+dotnet_diagnostic.UNT0018.severity = warning
+
+# UNT0019::Performance Unnecessary indirection call for GameObject.gameObject
+dotnet_diagnostic.UNT0019.severity = warning
+
+# UNT0020::Correctness MenuItem attribute used on non-static method
+dotnet_diagnostic.UNT0020.severity = warning
+
+# UNT0021::Correctness Unity message should be protected [opt-in]
+dotnet_diagnostic.UNT0021.severity = none
+
+# UNT0022::Performance Inefficient method to set position and rotation
+dotnet_diagnostic.UNT0022.severity = warning
+
+# UNT0023::Correctness Coalescing assignment on Unity objects
+dotnet_diagnostic.UNT0023.severity = warning
+
+# UNT0024::Performance Give priority to scalar calculations over vector calculations
+dotnet_diagnostic.UNT0024.severity = warning
+
+# UNT0025::Correctness Input.GetKey overloads with KeyCode argument
+dotnet_diagnostic.UNT0025.severity = warning
+
+# UNT0026::Performance GetComponent always allocates
+dotnet_diagnostic.UNT0026.severity = warning
+
+# UNT0027::Correctness Do not call PropertyDrawer.OnGUI()
+dotnet_diagnostic.UNT0027.severity = warning
+
+# UNT0028::Performance Use non-allocating physics APIs
+dotnet_diagnostic.UNT0028.severity = warning
+
+# UNT0029::Correctness Pattern matching with null on Unity objects
+dotnet_diagnostic.UNT0029.severity = warning
+
+# UNT0030::Correctness Calling Destroy or DestroyImmediate on a Transform
+dotnet_diagnostic.UNT0030.severity = warning
+
+# UNT0031::Correctness Asset operations in LoadAttribute method
+dotnet_diagnostic.UNT0031.severity = warning
+
+# UNT0032::Performance Inefficient method to set localPosition and localRotation
+dotnet_diagnostic.UNT0032.severity = warning
+
+# UNT0033::Correctness Incorrect message case
+dotnet_diagnostic.UNT0033.severity = warning
+
+# UNT0034::Performance A Vector3 can be converted into a Vector2
+dotnet_diagnostic.UNT0034.severity = warning
+
+# UNT0035::Performance A Vector2 can be converted into a Vector3
+dotnet_diagnostic.UNT0035.severity = warning
+
+# UNT0036::Performance Inefficient method to get position and rotation
+dotnet_diagnostic.UNT0036.severity = warning
+
+# UNT0037::Performance Inefficient method to get localPosition and localRotation
+dotnet_diagnostic.UNT0037.severity = warning
+
+
+
+###########################
+## C# EXCEPTIONS RULESET ##
+###########################
+[src/{Compilers,ExpressionEvaluator,Scripting}/**Test**/*.{cs,vb}]
 # IDE0060: Remove unused parameter
 dotnet_diagnostic.IDE0060.severity = none
 
 [src/{Analyzers,CodeStyle,Features,Workspaces,EditorFeatures,VisualStudio}/**/*.{cs,vb}]
-
 # IDE0011: Add braces
 csharp_prefer_braces = when_multiline:warning
 # NOTE: We need the below severity entry for Add Braces due to https://github.com/dotnet/roslyn/issues/44201
