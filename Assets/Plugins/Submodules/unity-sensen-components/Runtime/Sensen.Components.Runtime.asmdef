@@ -1,0 +1,18 @@
+{
+    "name": "Sensen.Components.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8ccb0cfcdad78704990b345c44b8d3d8",
+        "GUID:81e320ebbd157ab42b61c997bcce856a",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

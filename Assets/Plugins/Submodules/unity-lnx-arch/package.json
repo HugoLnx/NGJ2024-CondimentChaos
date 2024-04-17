@@ -1,0 +1,27 @@
+{
+  "name": "com.sensengames.unity-lnx-arch",
+  "displayName": "Sensen Games - Lnx Arch",
+  "version": "0.0.0",
+  "unity": "2021.3",
+  "description": "Make your Unity project cleaner and more modular with those features inspired by Dependency Injection solutions and Scriptable Objects Architecture.",
+  "keywords": [
+    "unity",
+	"unity3d",
+	"upm",
+    "sensengames",
+    "utility"
+  ],
+  "homepage": "https://github.com/sensengames/unity-lnx-arch.git",
+  "bugs": {
+    "url": "https://github.com/sensengames/unity-lnx-arch/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sensengames/unity-lnx-arch.git"
+  },
+  "license": "MIT",
+  "author": "Sensen Games (https://sensengames.com)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

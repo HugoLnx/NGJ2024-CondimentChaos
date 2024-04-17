@@ -1,0 +1,27 @@
+{
+  "name": "com.sensengames.unity-sensen-toolkit",
+  "displayName": "Sensen Games - Sensen Toolkit",
+  "version": "0.0.0",
+  "unity": "2021.3",
+  "description": "Useful tools, scripts, classes and functions for developing games in Unity.",
+  "keywords": [
+    "unity",
+	"unity3d",
+	"upm",
+    "sensengames",
+    "utility"
+  ],
+  "homepage": "https://github.com/sensengames/unity-sensen-toolkit.git",
+  "bugs": {
+    "url": "https://github.com/sensengames/unity-sensen-toolkit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sensengames/unity-sensen-toolkit.git"
+  },
+  "license": "MIT",
+  "author": "Sensen Games (https://sensengames.com)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
