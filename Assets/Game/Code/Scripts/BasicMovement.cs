@@ -8,7 +8,7 @@ namespace MyGame
     // Test class to evaluate that IntellieSense and Analyzers are working
     public class BasicMovement : MonoBehaviour
     {
-        [SerializeField] private float _speed = 5f;
+        [SerializeField] private float speed = 5f;
 
         private void Update()
         {
@@ -16,7 +16,7 @@ namespace MyGame
             var vertical = Input.GetAxis("Vertical");
 
             var direction = new Vector3(horizontal, 0, vertical);
-            var movement = direction * _speed * Time.deltaTime;
+            var movement = direction * speed * Time.deltaTime;
             transform.Translate(movement, Space.Self);
             var isPlayer = gameObject.tag == "Player";
             Debug.Log(isPlayer);
