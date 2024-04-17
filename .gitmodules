@@ -1,0 +1,4 @@
+[submodule "Assets\\Plugins\\Submodules\\unity-sensen-toolkit"]
+	path = Assets\\Plugins\\Submodules\\unity-sensen-toolkit
+	url = https://github.com/HugoLnx/unity-sensen-toolkit.git
+	branch = dev
