@@ -14,17 +14,23 @@ namespace Jam
         private readonly Dictionary<Direction, TrackWaypoint> _connections;
         public Dictionary<Direction, TrackWaypoint> Connections
             => _connections ?? BuildConnectionsDictionary();
+        public Vector2 Position => transform.position;
 
-        private Dictionary<Direction, TrackWaypoint> BuildConnectionsDictionary()
+        public TrackWaypoint GetWaypointInDirection(Direction direction)
         {
-            Dictionary<Direction, TrackWaypoint> connections = new();
+            return Connections.TryGetValue(direction, out TrackWaypoint waypoint) ? waypoint : null;
+        }
+
+        public void EnsureBackReferenceConnections()
+        {
             foreach (WaypointDirectionConfig config in _connectionsList)
             {
+                TrackWaypoint connectedWaypoint = config.Waypoint;
+                if (connectedWaypoint == null) continue;
                 var direction = Direction.FromEnum(config.Direction);
-                connections[direction] = config.Waypoint;
-                if (config.Waypoint == null) continue;
+                Direction oppositeDirection = direction.Opposite;
+                connectedWaypoint.EnsureConnectionTo(oppositeDirection, this);
             }
-            return connections;
         }
 
         private void OnDrawGizmos()
@@ -41,6 +47,26 @@ namespace Jam
                     Gizmos.DrawLine(pos + offset, target + offset);
                 }
             }
+        }
+
+        private void EnsureConnectionTo(Direction direction, TrackWaypoint waypoint)
+        {
+            Dictionary<Direction, TrackWaypoint> connections = Connections;
+            connections[direction] = waypoint;
+            _connectionsList = ConvertConnectionsToList(connections);
+        }
+
+        private List<WaypointDirectionConfig> ConvertConnectionsToList(Dictionary<Direction, TrackWaypoint> connections)
+        {
+            List<WaypointDirectionConfig> list = new();
+            foreach (KeyValuePair<Direction, TrackWaypoint> connection in connections)
+            {
+                Direction direction = connection.Key;
+                TrackWaypoint waypoint = connection.Value;
+                list.Add(new WaypointDirectionConfig(direction.Enumeration, waypoint));
+            }
+
+            return list;
         }
 
         private static Color DirectionToColor(DirectionEnum direction)
@@ -68,36 +94,16 @@ namespace Jam
             };
         }
 
-        public void EnsureBackReferenceConnections()
+        private Dictionary<Direction, TrackWaypoint> BuildConnectionsDictionary()
         {
+            Dictionary<Direction, TrackWaypoint> connections = new();
             foreach (WaypointDirectionConfig config in _connectionsList)
             {
-                TrackWaypoint connectedWaypoint = config.Waypoint;
-                if (connectedWaypoint == null) continue;
                 var direction = Direction.FromEnum(config.Direction);
-                Direction oppositeDirection = direction.Opposite;
-                connectedWaypoint.EnsureConnectionTo(oppositeDirection, this);
+                connections[direction] = config.Waypoint;
+                if (config.Waypoint == null) continue;
             }
-        }
-
-        private void EnsureConnectionTo(Direction direction, TrackWaypoint waypoint)
-        {
-            Dictionary<Direction, TrackWaypoint> connections = Connections;
-            connections[direction] = waypoint;
-            _connectionsList = ConvertConnectionsToList(connections);
-        }
-
-        private List<WaypointDirectionConfig> ConvertConnectionsToList(Dictionary<Direction, TrackWaypoint> connections)
-        {
-            List<WaypointDirectionConfig> list = new();
-            foreach (KeyValuePair<Direction, TrackWaypoint> connection in connections)
-            {
-                Direction direction = connection.Key;
-                TrackWaypoint waypoint = connection.Value;
-                list.Add(new WaypointDirectionConfig(direction.Enumeration, waypoint));
-            }
-
-            return list;
+            return connections;
         }
     }
 }

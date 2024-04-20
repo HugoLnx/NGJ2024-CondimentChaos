@@ -10,7 +10,7 @@ namespace Jam
         public static Direction Down = new(Vector2.down, DirectionEnum.Down);
         public static Direction Right = new(Vector2.right, DirectionEnum.Right);
         public static Direction Left = new(Vector2.left, DirectionEnum.Left);
-        private static readonly List<Direction> s_allDirections = new List<Direction>() {
+        public static readonly HashSet<Direction> All = new() {
             Up, Down, Right, Left
         };
         private static readonly Dictionary<DirectionEnum, Direction> s_fromEnumDict;
@@ -51,7 +51,7 @@ namespace Jam
         private static Dictionary<DirectionEnum, Direction> BuildFromEnumDictionary()
         {
             Dictionary<DirectionEnum, Direction> fromEnumDict = new();
-            foreach (Direction direction in s_allDirections)
+            foreach (Direction direction in All)
             {
                 fromEnumDict[direction.Enumeration] = direction;
             }
