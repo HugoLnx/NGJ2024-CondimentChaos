@@ -208,17 +208,27 @@ PrefabInstance:
     - target: {fileID: 3254627457813353916, guid: fb4c561c39ae4634f98b56dbd49eb34e,
         type: 3}
       propertyPath: _connectionsList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3254627457813353916, guid: fb4c561c39ae4634f98b56dbd49eb34e,
         type: 3}
       propertyPath: _connectionsList.Array.data[0]._waypoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1698378224}
+    - target: {fileID: 3254627457813353916, guid: fb4c561c39ae4634f98b56dbd49eb34e,
+        type: 3}
+      propertyPath: _connectionsList.Array.data[1]._waypoint
+      value: 
+      objectReference: {fileID: 2050007507}
     - target: {fileID: 3254627457813353916, guid: fb4c561c39ae4634f98b56dbd49eb34e,
         type: 3}
       propertyPath: _connectionsList.Array.data[0]._direction
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3254627457813353916, guid: fb4c561c39ae4634f98b56dbd49eb34e,
+        type: 3}
+      propertyPath: _connectionsList.Array.data[1]._direction
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8842138497680211144, guid: fb4c561c39ae4634f98b56dbd49eb34e,
         type: 3}
@@ -1149,15 +1159,15 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4628561800704459521}
   - {fileID: 691352603}
   - {fileID: 1868892308}
   - {fileID: 217003493}
+  - {fileID: 1698378223}
   - {fileID: 2050007508}
   - {fileID: 1916715445}
   - {fileID: 1300799947}
   - {fileID: 252038653}
-  - {fileID: 1698378223}
-  - {fileID: 4628561800704459521}
   - {fileID: 398882373}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1542,11 +1552,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _connectionsList.Array.data[0]._waypoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1161384371}
     - target: {fileID: 3254627457813353916, guid: fb4c561c39ae4634f98b56dbd49eb34e,
         type: 3}
       propertyPath: _connectionsList.Array.data[0]._direction
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8842138497680211144, guid: fb4c561c39ae4634f98b56dbd49eb34e,
         type: 3}
@@ -2456,13 +2466,13 @@ PrefabInstance:
     - target: {fileID: 3254627457813353916, guid: fb4c561c39ae4634f98b56dbd49eb34e,
         type: 3}
       propertyPath: _connectionsList.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3254627457813353916, guid: fb4c561c39ae4634f98b56dbd49eb34e,
         type: 3}
       propertyPath: _connectionsList.Array.data[0]._waypoint
       value: 
-      objectReference: {fileID: 2050007507}
+      objectReference: {fileID: 1300799946}
     - target: {fileID: 3254627457813353916, guid: fb4c561c39ae4634f98b56dbd49eb34e,
         type: 3}
       propertyPath: _connectionsList.Array.data[1]._waypoint
@@ -2471,7 +2481,7 @@ PrefabInstance:
     - target: {fileID: 3254627457813353916, guid: fb4c561c39ae4634f98b56dbd49eb34e,
         type: 3}
       propertyPath: _connectionsList.Array.data[0]._direction
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3254627457813353916, guid: fb4c561c39ae4634f98b56dbd49eb34e,
         type: 3}
@@ -2544,6 +2554,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1916715444}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1916715446 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3254627457813353916, guid: fb4c561c39ae4634f98b56dbd49eb34e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1916715444}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f20880d8834ea3458582db952a45515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2050007506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2561,11 +2583,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _connectionsList.Array.data[0]._waypoint
       value: 
-      objectReference: {fileID: 217003492}
+      objectReference: {fileID: 1916715446}
     - target: {fileID: 3254627457813353916, guid: fb4c561c39ae4634f98b56dbd49eb34e,
         type: 3}
       propertyPath: _connectionsList.Array.data[0]._direction
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8842138497680211144, guid: fb4c561c39ae4634f98b56dbd49eb34e,
         type: 3}
