@@ -6,20 +6,31 @@ using UnityEngine;
 
 namespace Jam
 {
-    public class ShootingPlayerController : MonoBehaviour
+    public class ShooterPlayerController : MonoBehaviour
     {
         private Camera _camera;
+        private Shooter _player;
+
         private Camera MainCamera => _camera = _camera != null ? _camera : Camera.main;
+
+        private void Awake()
+        {
+            this._player = GetComponent<Shooter>();
+        }
 
         private void Update()
         {
             UpdatesPlayerRotation();
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+            {
+                _player.Shoot();
+            }
         }
 
         private void UpdatesPlayerRotation()
         {
             Vector3 mousePosition = MainCamera.ScreenToWorldPoint(Input.mousePosition);
-            transform.up = (mousePosition - transform.position).XY().normalized;
+            _player.TurnTo(mousePosition);
         }
     }
 }
