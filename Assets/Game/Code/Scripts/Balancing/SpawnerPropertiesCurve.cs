@@ -56,7 +56,7 @@ namespace Jam
         {
             DificultyCurve curve = DificultyCurve.Instance;
             float difficulty = curve.DificultyOnTime(seconds);
-            Debug.Log($"Difficulty: {seconds} -> {difficulty}");
+            // Debug.Log($"Difficulty: {seconds} -> {difficulty}");
 
             return new DifficultyProperties
             {

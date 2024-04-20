@@ -10,6 +10,11 @@ namespace Jam
         [SerializeField] private float _gameDuration = 60;
         [SerializeField] private float _waveAmplitude = 0.2f;
 
+        public float GameDuration
+        {
+            set => _gameDuration = value;
+        }
+
         public float DificultyOnTime(float seconds)
         {
             float cycleTime = _gameDuration / _cyclesCount;

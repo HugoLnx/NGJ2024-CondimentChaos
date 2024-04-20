@@ -1673,84 +1673,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1523855622
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1523855623}
-  - component: {fileID: 1523855625}
-  - component: {fileID: 1523855624}
-  m_Layer: 0
-  m_Name: DificultyCurve
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1523855623
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523855622}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 872150676703861061}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1523855624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523855622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72b39c957d7ed40479f8f14913188ed6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cooldownRange:
-    <Begin>k__BackingField: 20
-    <End>k__BackingField: 5
-  _customerAChances:
-  - 1
-  - 0.5
-  - 0.5
-  - 0.45
-  _customerBChances:
-  - 0
-  - 0.5
-  - 0.35
-  - 0.3
-  _customerCChances:
-  - 0
-  - 0
-  - 0.15
-  - 0.25
---- !u!114 &1523855625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523855622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7f79ec76b43c784b8e17137bc2e4b42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cyclesCount: 6
-  _gameDuration: 60
-  _waveAmplitude: 0.1
 --- !u!1 &1581216023
 GameObject:
   m_ObjectHideFlags: 0
@@ -2307,19 +2229,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 1558444124463110565, guid: ac94f15a8973c0b4e84202d7bc1d393d,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1523855623}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac94f15a8973c0b4e84202d7bc1d393d, type: 3}
---- !u!4 &872150676703861061 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1558444124463110565, guid: ac94f15a8973c0b4e84202d7bc1d393d,
-    type: 3}
-  m_PrefabInstance: {fileID: 872150676703861060}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1318468507172385306
 PrefabInstance:
   m_ObjectHideFlags: 0

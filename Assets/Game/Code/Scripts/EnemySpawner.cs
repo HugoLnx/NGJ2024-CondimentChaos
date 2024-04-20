@@ -11,8 +11,7 @@ public class EnemySpawner : MonoBehaviour
     private List<Vector2> usedSpawns = new();
     public float spawnCooldown = 3.0f;
 
-    // Start is called before the first frame update
-    void Start()
+    public void StartSpawning()
     {
         StartCoroutine(SpawnRoutine());
     }
