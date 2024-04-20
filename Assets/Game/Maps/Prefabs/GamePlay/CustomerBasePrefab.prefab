@@ -249,6 +249,7 @@ MonoBehaviour:
   _foodPopup: {fileID: 6621598388380825739}
   _flavorOverlay: {fileID: 151579059851622437}
   _scorePopup: {fileID: 9104114208627062615}
+  _boxCollider: {fileID: 814209134554852387}
 --- !u!95 &768326863124784066
 Animator:
   serializedVersion: 5

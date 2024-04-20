@@ -11,6 +11,8 @@ namespace Jam
     {
         [SerializeField] private float _speed = 5f;
         [SerializeField] private FoodProjectile _projectilePrefab;
+        private bool _canShoot = true;
+        [SerializeField] private float _shotCooldown = 0.5f;
         private Vector2 Forward
         {
             get => transform.up;
@@ -18,6 +20,8 @@ namespace Jam
         }
         public void Shoot()
         {
+            if (!_canShoot) return;
+
             FoodSO food = FoodSORepository.Repo.GetRandom();
             FoodProjectile projectile = Instantiate(_projectilePrefab, transform.position, Quaternion.identity);
             projectile.Setup(
@@ -25,6 +29,14 @@ namespace Jam
                 direction: this.Forward,
                 speed: _speed
             );
+            _canShoot = false;
+            StartCoroutine(ShotCooldown());
+        }
+
+        private IEnumerator ShotCooldown()
+        {
+            yield return new WaitForSeconds(_shotCooldown);
+            _canShoot = true;
         }
 
         public void TurnTo(Vector3 targetPosition)

@@ -27,6 +27,7 @@ public class Customer : MonoBehaviour
     [SerializeField] private GameObject _foodPopup;
     [SerializeField] private GameObject _flavorOverlay;
     [SerializeField] private TextMeshProUGUI _scorePopup;
+    [SerializeField] private BoxCollider2D _boxCollider;
 
     public event Action OnFinish;
 
@@ -35,6 +36,7 @@ public class Customer : MonoBehaviour
         _animator = GetComponent<Animator>();
         _foodPopupRenderer = _foodPopup.GetComponent<SpriteRenderer>();
         _flavorRenderer = _flavorOverlay.GetComponent<SpriteRenderer>();
+        _boxCollider = GetComponent<BoxCollider2D>();
     }
 
     // Start is called before the first frame update
@@ -78,13 +80,14 @@ public class Customer : MonoBehaviour
         _flavorRenderer.color = preferredFlavor.Color;
     }
     // if a trigger enters the collider
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Food"))
         {
             FoodProjectile food = collision.gameObject.GetComponent<FoodProjectile>();
             if (food.Food == preferredFood)
             {
+                _boxCollider.enabled = false;
                 if (food.Flavor == preferredFlavor)
                 {
                     Debug.Log("Full Points: " + scoreValue);
@@ -98,6 +101,7 @@ public class Customer : MonoBehaviour
                     ShowScorePopup(scoreValue / 3);
                 }
                 _isServed = true;
+                Destroy(collision.gameObject);
             }
         }
     }
