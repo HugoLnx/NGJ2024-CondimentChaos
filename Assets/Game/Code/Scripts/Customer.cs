@@ -86,8 +86,14 @@ public class Customer : MonoBehaviour
     private void SetFoodPopup()
     {
         _foodPopupRenderer.sprite = preferredFood.Texture;
-        _flavorRenderer.sprite = preferredFood.FlavorTexture;
-        _flavorRenderer.color = preferredFlavor.Color;
+        for (int i = 0; i < preferredFood.FlavorTextures.Count; i++)
+        {
+            if (preferredFood.FlavorTextures[i].Flavor == preferredFlavor)
+            {
+                _flavorRenderer.sprite = preferredFood.FlavorTextures[i].Sprite;
+                break;
+            }
+        }
     }
     // if a trigger enters the collider
     private void OnTriggerEnter2D(Collider2D collision)

@@ -1,7 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 using EasyButtons;
+using Mono.Cecil.Cil;
+using Unity.Collections;
 using UnityEngine;
 
 namespace Jam
@@ -49,13 +53,19 @@ namespace Jam
             this._speed = speed;
             _rbody.velocity = _direction * _speed;
             _srenderer.sprite = food.Texture;
-            _flavorRenderer.sprite = food.FlavorTexture;
             _srenderer.enabled = true;
         }
 
         public void Flavorize(FlavorSO flavor)
         {
-            _flavorRenderer.color = flavor.Color;
+            for (int i = 0; i < _food.FlavorTextures.Count; i++)
+            {
+                if (_food.FlavorTextures[i].Flavor == flavor)
+                {
+                    _flavorRenderer.sprite = _food.FlavorTextures[i].Sprite;
+                    break;
+                }
+            }
             _flavorRenderer.enabled = true;
         }
 

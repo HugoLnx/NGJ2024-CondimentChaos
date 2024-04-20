@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e509d86212fabbd43826730195185c8f, type: 3}
   m_Name: Fish
   m_EditorClassIdentifier: 
-  <Texture>k__BackingField: {fileID: 21300000, guid: 9dfc8c667d642494c9977476fdd697aa,
+  <Texture>k__BackingField: {fileID: 21300000, guid: 8005f167a3127f64bb6308938d995b30,
     type: 3}
-  <FlavorTexture>k__BackingField: {fileID: 21300000, guid: 830a8b0e6f96a98418be29ad8e93558b,
-    type: 3}
+  <FlavorTextures>k__BackingField:
+  - Flavor: {fileID: 11400000, guid: 4877a0dac4dad62408ec0b2f846e51d2, type: 2}
+    Sprite: {fileID: 21300000, guid: f7a904a85dfb2a845ba4c9ab96bdb278, type: 3}
+  - Flavor: {fileID: 11400000, guid: e12429d6bea6cec449dffe0426a5fbcc, type: 2}
+    Sprite: {fileID: 21300000, guid: a43925e51921f6047818e986d67a1723, type: 3}
+  - Flavor: {fileID: 11400000, guid: 518e1ec80b048e045b4f9fdf4794103b, type: 2}
+    Sprite: {fileID: 21300000, guid: a68d2fc336a5cec4ea2b1b94c08ea9ea, type: 3}

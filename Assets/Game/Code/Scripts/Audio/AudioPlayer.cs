@@ -11,6 +11,11 @@ namespace Jam
         [SerializeField] private AudioSource _source;
         public void PlaySFX(params AudioClip[] clips)
         {
+            if (clips.Length <= 0)
+            {
+                Debug.LogWarning("SFX list length is 0");
+                return;
+            }
             _source.PlayOneShot(clips.Shuffle().First());
         }
     }
