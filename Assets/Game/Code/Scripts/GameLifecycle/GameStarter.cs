@@ -6,13 +6,11 @@ namespace Jam
 {
     public class GameStarter : MonoBehaviour
     {
-        [SerializeField] private EnemySpawner _spawner;
-
         private IEnumerator Start()
         {
             yield return new WaitForSeconds(1f);
             GameTime.Instance.StartTimer();
-            _spawner.StartSpawning();
+            EnemySpawner.Instance.StartSpawning();
         }
     }
 }

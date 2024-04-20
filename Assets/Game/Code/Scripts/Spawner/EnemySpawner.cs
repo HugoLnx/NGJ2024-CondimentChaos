@@ -6,7 +6,7 @@ using SensenToolkit.Rand;
 using UnityEngine;
 using PrefabDict = System.Collections.Generic.Dictionary<(CustomerType, CustomerDifficulty), Customer>;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : ASingleton<EnemySpawner>
 {
     [SerializeField] private List<Customer> _customerPrefabs;
     private PrefabDict _customerPrefabDict;
