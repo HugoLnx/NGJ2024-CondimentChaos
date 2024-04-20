@@ -28,6 +28,7 @@ public class Customer : MonoBehaviour
     [SerializeField] private GameObject _flavorOverlay;
     [SerializeField] private TextMeshProUGUI _scorePopup;
     [SerializeField] private BoxCollider2D _boxCollider;
+    [SerializeField] private AudioClip _spawnSfx;
 
     public event Action OnFinish;
 
@@ -47,6 +48,7 @@ public class Customer : MonoBehaviour
         preferredFood = FoodSORepository.Repo.GetRandom();
         preferredFlavor = FlavorSORepository.Repo.GetRandom();
         SetFoodPopup();
+        AudioPlayer.Instance.PlaySFX(_spawnSfx);
     }
 
     // Update is called once per frame

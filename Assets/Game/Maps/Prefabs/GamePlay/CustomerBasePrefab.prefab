@@ -250,6 +250,7 @@ MonoBehaviour:
   _flavorOverlay: {fileID: 151579059851622437}
   _scorePopup: {fileID: 9104114208627062615}
   _boxCollider: {fileID: 814209134554852387}
+  _spawnSfx: {fileID: 8300000, guid: 770fa4f2e1af164419139d3fe8e3bb94, type: 3}
 --- !u!95 &768326863124784066
 Animator:
   serializedVersion: 5
