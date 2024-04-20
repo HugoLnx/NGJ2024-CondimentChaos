@@ -10,6 +10,7 @@ namespace Jam
     {
         [SerializeField] private bool _canTurnBack = true;
         [SerializeField] private bool _resetPreferredOnReach = true;
+        [SerializeField] private bool _canTurnBackInMiddleOfThePath = true;
         private Direction _preferredDirection;
         private Direction _movementDirection;
         private TrackWaypoint _targetWaypoint;
@@ -51,7 +52,12 @@ namespace Jam
 
         public void SetPreferredDirection(Direction direction)
         {
+            bool isTryingToGoBack = direction == this._movementDirection.Opposite;
             this._preferredDirection = direction;
+            if (isTryingToGoBack && _canTurnBack && _canTurnBackInMiddleOfThePath)
+            {
+                TargetNextWaypoint();
+            }
         }
 
         private void TargetNextWaypoint()

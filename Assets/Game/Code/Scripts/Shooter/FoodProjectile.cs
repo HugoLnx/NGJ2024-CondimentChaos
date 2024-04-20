@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using EasyButtons;
@@ -17,6 +18,7 @@ namespace Jam
         [SerializeField] private SpriteRenderer _flavorRenderer;
         [SerializeField] private bool _autoSetup;
         private Rigidbody2D _rbody;
+        private RaycastHit2D[] _rayhits = new RaycastHit2D[1];
 
         public FoodSO Food => _food;
         public FlavorSO Flavor => _flavor;
@@ -60,6 +62,20 @@ namespace Jam
         private void Update()
         {
             transform.Rotate(Vector3.forward, _rotateSpeed * Time.deltaTime);
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            bool hasHitFountain = other.collider.CompareTag(Fountain.Tag);
+            if (!hasHitFountain) return;
+
+            Fountain fountain = other.collider.GetComponent<Fountain>();
+            Vector2 normal = other.GetContact(0).normal;
+            Vector2 currentDirection = _rbody.velocity.normalized;
+            var newDirection = Vector2.Reflect(currentDirection, normal);
+            this._rbody.velocity = newDirection * _speed;
+
+            Flavorize(fountain.Flavor);
         }
     }
 }

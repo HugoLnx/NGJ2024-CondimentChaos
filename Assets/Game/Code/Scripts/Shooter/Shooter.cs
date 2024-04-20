@@ -25,14 +25,6 @@ namespace Jam
                 direction: this.Forward,
                 speed: _speed
             );
-
-            StartCoroutine(FlavorizeCororutine(projectile));
-        }
-
-        private IEnumerator FlavorizeCororutine(FoodProjectile projectile)
-        {
-            yield return new WaitForSeconds(1.5f);
-            projectile.Flavorize(FlavorSORepository.Repo.GetRandom());
         }
 
         public void TurnTo(Vector3 targetPosition)
