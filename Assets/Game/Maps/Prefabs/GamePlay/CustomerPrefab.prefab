@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.95, y: 1.74, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3870985354281532967}
@@ -238,13 +238,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isWaiting: 1
   _isServed: 0
-  _timeToLeave: 5
+  _timeToLeave: 20
   _slider: {fileID: 4258131574655772878}
   scoreValue: 100
   preferredFood: {fileID: 0}
   preferredFlavor: {fileID: 0}
-  spawnRangeX: 8
-  spawnRangeY: 2.76
+  spawnRangeX: 2
+  spawnRangeY: 2
   _foodPopup: {fileID: 6621598388380825739}
   _flavorOverlay: {fileID: 151579059851622437}
 --- !u!95 &768326863124784066
@@ -625,7 +625,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.95, y: 1.74, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3870985354281532967}

@@ -75,7 +75,22 @@ public class Customer : MonoBehaviour
     // if a trigger enters the collider
     void OnTriggerEnter2D(Collider2D collision)
     {
-        _isServed = true;
+        if (collision.CompareTag("Food"))
+        {
+            FoodProjectile food = collision.gameObject.GetComponent<FoodProjectile>();
+            if (food.Food == preferredFood)
+            {
+                if (food.Flavor == preferredFlavor)
+                {
+                    Debug.Log("Full Points: " + scoreValue);
+                }
+                else
+                {
+                    Debug.Log("Reduced points: " + scoreValue / 3);
+                }
+                _isServed = true;
+            }
+        }
     }
 
     // plays timeout animation
