@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Jam;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Customer : MonoBehaviour
 {
+    const string SCOREPOPUPBASE = "+";
     [SerializeField] private bool _isWaiting = true;
     [SerializeField] private bool _isServed = false;
     [SerializeField] private float _timeToLeave = 5.0f;
@@ -23,6 +26,9 @@ public class Customer : MonoBehaviour
 
     [SerializeField] private GameObject _foodPopup;
     [SerializeField] private GameObject _flavorOverlay;
+    [SerializeField] private TextMeshProUGUI _scorePopup;
+
+    public event Action OnFinish;
 
     void Awake()
     {
@@ -39,7 +45,6 @@ public class Customer : MonoBehaviour
         preferredFood = FoodSORepository.Repo.GetRandom();
         preferredFlavor = FlavorSORepository.Repo.GetRandom();
         SetFoodPopup();
-        transform.position = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), Random.Range(-spawnRangeY, spawnRangeY), 0);
     }
 
     // Update is called once per frame
@@ -83,10 +88,14 @@ public class Customer : MonoBehaviour
                 if (food.Flavor == preferredFlavor)
                 {
                     Debug.Log("Full Points: " + scoreValue);
+                    UI.Instance.IncreaseScore(scoreValue);
+                    ShowScorePopup(scoreValue);
                 }
                 else
                 {
                     Debug.Log("Reduced points: " + scoreValue / 3);
+                    UI.Instance.IncreaseScore(scoreValue / 3);
+                    ShowScorePopup(scoreValue / 3);
                 }
                 _isServed = true;
             }
@@ -131,9 +140,22 @@ public class Customer : MonoBehaviour
         }
     }
 
+    // show score popup
+    private void ShowScorePopup(int value)
+    {
+        _scorePopup.text = SCOREPOPUPBASE + value;
+        // withalpha is Hugo's function
+        _scorePopup.color = _scorePopup.color.WithAlpha(1);
+    }
+
     // destroys this gameobject
     public void DestroyCustomer()
     {
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        OnFinish?.Invoke();
     }
 }

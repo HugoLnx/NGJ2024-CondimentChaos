@@ -3,14 +3,14 @@ using UnityEngine;
 namespace Jam
 {
     public abstract class ASingleton<T> : MonoBehaviour
-    where T : Component
+    where T : ASingleton<T>
     {
-        public static ASingleton<T> Instance { get; protected set; }
+        public static T Instance { get; protected set; }
         protected void Awake()
         {
             if (Instance == null)
             {
-                Instance = this;
+                Instance = this as T;
                 DontDestroyOnLoad(gameObject);
             }
             else
