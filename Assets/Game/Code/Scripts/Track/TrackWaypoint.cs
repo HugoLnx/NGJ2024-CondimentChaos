@@ -21,6 +21,11 @@ namespace Jam
             return Connections.TryGetValue(direction, out TrackWaypoint waypoint) ? waypoint : null;
         }
 
+        private void Start()
+        {
+            GetComponent<SpriteRenderer>().enabled = false;
+        }
+
         public void EnsureBackReferenceConnections()
         {
             foreach (WaypointDirectionConfig config in _connectionsList)
