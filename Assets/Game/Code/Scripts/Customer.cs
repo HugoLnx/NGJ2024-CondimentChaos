@@ -13,6 +13,10 @@ public class Customer : MonoBehaviour
     [SerializeField] private bool _isWaiting = true;
     [SerializeField] private bool _isServed = false;
     [SerializeField] private float _timeToLeave = 5.0f;
+    [SerializeField] private CustomerDifficulty _difficulty;
+    [SerializeField] private CustomerType _type;
+    public CustomerType Type => _type;
+    public CustomerDifficulty Difficulty => _difficulty;
     private Animator _animator;
     private SpriteRenderer _foodPopupRenderer;
     private SpriteRenderer _flavorRenderer;

@@ -75,8 +75,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3544401038583209068, guid: 4979cda4d8ba7714b8d5fbf2b84025e7,
         type: 3}
+      propertyPath: _type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544401038583209068, guid: 4979cda4d8ba7714b8d5fbf2b84025e7,
+        type: 3}
       propertyPath: scoreValue
       value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544401038583209068, guid: 4979cda4d8ba7714b8d5fbf2b84025e7,
+        type: 3}
+      propertyPath: _difficulty
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3544401038583209068, guid: 4979cda4d8ba7714b8d5fbf2b84025e7,
         type: 3}

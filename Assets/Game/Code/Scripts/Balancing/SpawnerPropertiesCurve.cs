@@ -52,6 +52,11 @@ namespace Jam
             // Debug.Log($"Chance C: {properties.ChanceCustomerC}");
         }
 
+        public DifficultyProperties GetCurrentProperties()
+        {
+            return GetProperties(GameTime.Instance.CurrentTime);
+        }
+
         public DifficultyProperties GetProperties(float seconds)
         {
             DificultyCurve curve = DificultyCurve.Instance;

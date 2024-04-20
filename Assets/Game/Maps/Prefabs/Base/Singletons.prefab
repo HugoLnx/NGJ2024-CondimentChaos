@@ -129,8 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f79ec76b43c784b8e17137bc2e4b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cyclesCount: 6
-  _gameDuration: 60
+  _cyclesCount: 12
+  _gameDuration: 120
   _waveAmplitude: 0.1
 --- !u!114 &7547472717000977794
 MonoBehaviour:
@@ -145,8 +145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cooldownRange:
-    <Begin>k__BackingField: 20
-    <End>k__BackingField: 5
+    <Begin>k__BackingField: 6
+    <End>k__BackingField: 2
   _customerAChances:
   - 1
   - 0.5

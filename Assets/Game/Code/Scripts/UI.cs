@@ -21,7 +21,7 @@ public class UI : ASingleton<UI>
 
     private void Update()
     {
-        SetTimeText(_gameTime.CurrentTime);
+        SetTimeText(_gameTime.RemainingTime);
     }
 
     public void IncreaseScore(int scoreToAdd)

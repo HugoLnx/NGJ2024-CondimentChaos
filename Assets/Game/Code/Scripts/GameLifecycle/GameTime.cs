@@ -12,6 +12,7 @@ namespace Jam
         private bool _hasStarted;
 
         public float CurrentTime => _currentTime;
+        public float RemainingTime => _totalTime - _currentTime;
         public event Action OnEnded;
 
         private void Start()

@@ -144,6 +144,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7104785072272707027, guid: 185d6fe7a0c6bb144a46840ce11d2c3f,
         type: 3}
+      propertyPath: _difficulty
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104785072272707027, guid: 185d6fe7a0c6bb144a46840ce11d2c3f,
+        type: 3}
       propertyPath: _timeToLeave
       value: 16
       objectReference: {fileID: 0}

@@ -1808,7 +1808,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _customerPrefabs:
-  - {fileID: 7697007479404354427, guid: 8ca3b4fd95058df4e873389056360e17, type: 3}
+  - {fileID: 7104785072272707027, guid: 185d6fe7a0c6bb144a46840ce11d2c3f, type: 3}
+  - {fileID: 3443526257582688590, guid: f9cf86f906902354197ed16a703532ca, type: 3}
+  - {fileID: 588500921826920599, guid: 806eeef53a3612d42b80c3c7da095b73, type: 3}
+  - {fileID: 3544401038583209068, guid: 4979cda4d8ba7714b8d5fbf2b84025e7, type: 3}
+  - {fileID: 4488671727625355882, guid: 2ff8070397563cc448c703ae32d99eae, type: 3}
+  - {fileID: 1151988322777686071, guid: 1741b7b3283b4a64ebe6e7faac0add8e, type: 3}
+  - {fileID: 8207801809711597963, guid: e15a8a1ee1c745b4f93ea203152895f8, type: 3}
+  - {fileID: 5262675659301715816, guid: 5cb27f262f0a9b34f9553c1e22586701, type: 3}
+  - {fileID: 39624091875888972, guid: bcbee309300cb784cb2a080389904ec8, type: 3}
   spawnpoints:
   - {x: -3.64, y: -2.31}
   - {x: -3.02, y: 2.32}
@@ -1816,7 +1824,6 @@ MonoBehaviour:
   - {x: -0.67, y: 0.56}
   - {x: 3, y: -2.47}
   - {x: -0.03, y: -2.47}
-  spawnCooldown: 2.5
 --- !u!4 &1371134681
 Transform:
   m_ObjectHideFlags: 0
