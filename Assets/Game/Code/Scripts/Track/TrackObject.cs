@@ -11,6 +11,7 @@ namespace Jam
         [SerializeField] private bool _canTurnBack = true;
         [SerializeField] private bool _resetPreferredOnReach = true;
         [SerializeField] private bool _canTurnBackInMiddleOfThePath = true;
+        public event Action OnChangedDirection;
         private Direction _preferredDirection;
         private Direction _movementDirection;
         private TrackWaypoint _targetWaypoint;
@@ -26,8 +27,13 @@ namespace Jam
 
         public void Setup(TrackWaypoint waypoint, Direction movementDirection)
         {
+            bool hasChangedDirection = this._movementDirection != movementDirection;
             this._targetWaypoint = waypoint;
             this._movementDirection = movementDirection;
+            if (hasChangedDirection)
+            {
+                OnChangedDirection?.Invoke();
+            }
         }
 
         public void MoveForward(float distance)

@@ -168,6 +168,8 @@ MonoBehaviour:
   _srenderer: {fileID: 5974076056349217314}
   _flavorRenderer: {fileID: 9036730116625483101}
   _autoSetup: 0
+  _bounceSfx:
+  - {fileID: 8300000, guid: e440e0aa86e3bd240b799736a5de4552, type: 3}
 --- !u!58 &4353144175032242735
 CircleCollider2D:
   m_ObjectHideFlags: 0

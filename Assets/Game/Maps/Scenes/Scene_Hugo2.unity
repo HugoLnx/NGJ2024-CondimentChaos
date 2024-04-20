@@ -2285,6 +2285,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 3
+  _movementSfx:
+  - {fileID: 8300000, guid: ac84edfa06df09c4f99674afb1464c7d, type: 3}
+  - {fileID: 8300000, guid: 609a4062eaca6e840a54a81525e56555, type: 3}
 --- !u!114 &1581216029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2312,7 +2315,9 @@ MonoBehaviour:
   _speed: 5
   _projectilePrefab: {fileID: 2452993622196983359, guid: 68a33c038cdf9ca479365026a374c231,
     type: 3}
-  _shotCooldown: 0.5
+  _shotCooldown: 0.35
+  _shootSfx:
+  - {fileID: 8300000, guid: b26fba551afeb2146933b082f6c80247, type: 3}
 --- !u!1 &1694294361
 GameObject:
   m_ObjectHideFlags: 0

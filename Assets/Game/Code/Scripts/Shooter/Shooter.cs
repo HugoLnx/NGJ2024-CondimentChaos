@@ -13,6 +13,8 @@ namespace Jam
         [SerializeField] private FoodProjectile _projectilePrefab;
         private bool _canShoot = true;
         [SerializeField] private float _shotCooldown = 0.5f;
+        [SerializeField] private AudioClip[] _shootSfx;
+
         private Vector2 Forward
         {
             get => transform.up;
@@ -22,6 +24,7 @@ namespace Jam
         {
             if (!_canShoot) return;
 
+            AudioPlayer.Instance.PlaySFX(_shootSfx);
             FoodSO food = FoodSORepository.Repo.GetRandom();
             FoodProjectile projectile = Instantiate(_projectilePrefab, transform.position, Quaternion.identity);
             projectile.Setup(

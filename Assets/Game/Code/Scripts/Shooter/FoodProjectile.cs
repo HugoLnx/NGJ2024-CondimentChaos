@@ -21,6 +21,7 @@ namespace Jam
         [SerializeField] private SpriteRenderer _srenderer;
         [SerializeField] private SpriteRenderer _flavorRenderer;
         [SerializeField] private bool _autoSetup;
+        [SerializeField] private AudioClip[] _bounceSfx;
         private Rigidbody2D _rbody;
         private RaycastHit2D[] _rayhits = new RaycastHit2D[1];
 
@@ -84,6 +85,8 @@ namespace Jam
             Vector2 currentDirection = _rbody.velocity.normalized;
             var newDirection = Vector2.Reflect(currentDirection, normal);
             this._rbody.velocity = newDirection * _speed;
+
+            AudioPlayer.Instance.PlaySFX(_bounceSfx);
 
             Flavorize(fountain.Flavor);
         }

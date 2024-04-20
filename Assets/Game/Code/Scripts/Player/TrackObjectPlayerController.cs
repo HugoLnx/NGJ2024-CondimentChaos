@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,11 +9,18 @@ namespace Jam
     public class TrackObjectPlayerController : MonoBehaviour
     {
         [SerializeField] float _speed = 3f;
+        [SerializeField] private AudioClip[] _movementSfx;
         private TrackObject _trackObject;
 
         private void Awake()
         {
             this._trackObject = this.GetComponent<TrackObject>();
+            this._trackObject.OnChangedDirection += OnChangedDirection;
+        }
+
+        private void OnChangedDirection()
+        {
+            AudioPlayer.Instance.PlaySFX(_movementSfx);
         }
 
         private void Update()
