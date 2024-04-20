@@ -9,6 +9,10 @@ namespace SensenToolkit
         {
             return new Vector3(v2.x, 0, v2.y);
         }
+        public static Vector3 XY0(this Vector2 v2)
+        {
+            return (Vector3)v2;
+        }
 
         public static float Angle(this Vector2 vec)
         {
