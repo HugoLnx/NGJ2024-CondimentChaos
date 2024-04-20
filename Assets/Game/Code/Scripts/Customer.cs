@@ -33,6 +33,10 @@ public class Customer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _scorePopup;
     [SerializeField] private BoxCollider2D _boxCollider;
     [SerializeField] private AudioClip _spawnSfx;
+    [SerializeField] private AudioClip[] _foodIsCorrectMatchSfx;
+    [SerializeField] private AudioClip[] _foodIsWrongMatchSfx;
+    [SerializeField] private AudioClip _foodIsUndelivered;
+    [SerializeField] private AudioClip _customerDestroyed;
 
     public event Action OnFinish;
 
@@ -102,11 +106,13 @@ public class Customer : MonoBehaviour
                 }
                 else
                 {
+                    AudioPlayer.Instance.PlaySFX(_foodIsWrongMatchSfx);
                     Debug.Log("Reduced points: " + scoreValue / 3);
                     UI.Instance.IncreaseScore(scoreValue / 3);
                     ShowScorePopup(scoreValue / 3);
                 }
                 _isServed = true;
+                //AudioPlayer.Instance.PlaySFX(_foodIsUndelivered);                
                 Destroy(collision.gameObject);
             }
         }
@@ -115,6 +121,7 @@ public class Customer : MonoBehaviour
     // plays timeout animation
     private void PlayTimeOutAnimation()
     {
+        AudioPlayer.Instance.PlaySFX(_customerDestroyed);
         _animator.SetTrigger("timeout");
     }
 
@@ -122,6 +129,8 @@ public class Customer : MonoBehaviour
     private void PlaySatisfiedAnimation()
     {
         _animator.SetTrigger("satisfied");
+        AudioPlayer.Instance.PlaySFX(_foodIsCorrectMatchSfx);
+
     }
 
     // sets the patience meters max value

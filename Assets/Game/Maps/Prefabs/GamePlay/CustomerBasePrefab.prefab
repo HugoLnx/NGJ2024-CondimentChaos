@@ -251,6 +251,13 @@ MonoBehaviour:
   _scorePopup: {fileID: 9104114208627062615}
   _boxCollider: {fileID: 814209134554852387}
   _spawnSfx: {fileID: 8300000, guid: 770fa4f2e1af164419139d3fe8e3bb94, type: 3}
+  _foodIsCorrectMatchSfx:
+  - {fileID: 8300000, guid: 6a316e973ed726e45908569b020b6dce, type: 3}
+  - {fileID: 8300000, guid: 1e3f684a52501834dbe038a48c82707c, type: 3}
+  - {fileID: 8300000, guid: 26f50aee5a4c3f14e82865c7ae798750, type: 3}
+  _foodIsWrongMatchSfx: []
+  _foodIsUndelivered: {fileID: 8300000, guid: 8f70ac274537cb34aa4bed52114540f8, type: 3}
+  _customerDestroyed: {fileID: 8300000, guid: f0a1c29375baf7c4aa8eeed05758c7d0, type: 3}
 --- !u!95 &768326863124784066
 Animator:
   serializedVersion: 5
