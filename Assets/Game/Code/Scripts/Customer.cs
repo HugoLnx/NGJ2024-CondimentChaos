@@ -10,17 +10,25 @@ public class Customer : MonoBehaviour
     [SerializeField] private bool _isWaiting = true;
     [SerializeField] private bool _isServed = false;
     [SerializeField] private float _timeToLeave = 5.0f;
-    private BoxCollider2D _collider;
     private Animator _animator;
+    private SpriteRenderer _foodPopupRenderer;
+    private SpriteRenderer _flavorRenderer;
     [SerializeField] private Slider _slider;
     public int scoreValue = 100;
     public FoodSO preferredFood;
     public FlavorSO preferredFlavor;
 
+    public float spawnRangeX = 8.0f;
+    public float spawnRangeY = 2.76f;
+
+    [SerializeField] private GameObject _foodPopup;
+    [SerializeField] private GameObject _flavorOverlay;
+
     void Awake()
     {
         _animator = GetComponent<Animator>();
-        _collider = GetComponent<BoxCollider2D>();
+        _foodPopupRenderer = _foodPopup.GetComponent<SpriteRenderer>();
+        _flavorRenderer = _flavorOverlay.GetComponent<SpriteRenderer>();
     }
 
     // Start is called before the first frame update
@@ -28,6 +36,10 @@ public class Customer : MonoBehaviour
     {
         SetSliderMaxValue(_timeToLeave);
         SetSliderCurrentValue(_timeToLeave);
+        preferredFood = FoodSORepository.Repo.GetRandom();
+        preferredFlavor = FlavorSORepository.Repo.GetRandom();
+        SetFoodPopup();
+        transform.position = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), Random.Range(-spawnRangeY, spawnRangeY), 0);
     }
 
     // Update is called once per frame
@@ -53,6 +65,13 @@ public class Customer : MonoBehaviour
         }
     }
 
+    // sets sprites of food popup and flavor overlay
+    private void SetFoodPopup()
+    {
+        _foodPopupRenderer.sprite = preferredFood.Texture;
+        _flavorRenderer.sprite = preferredFood.FlavorTexture;
+        _flavorRenderer.color = preferredFlavor.Color;
+    }
     // if a trigger enters the collider
     void OnTriggerEnter2D(Collider2D collision)
     {
