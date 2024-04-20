@@ -341,7 +341,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 0
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -1405,7 +1405,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _customerPrefabs:
-  - {fileID: 3121529029854054949, guid: 7f322c8797583b240a682ac551004a00, type: 3}
   - {fileID: 7697007479404354427, guid: 8ca3b4fd95058df4e873389056360e17, type: 3}
   spawnpoints:
   - {x: -3.63, y: 0}

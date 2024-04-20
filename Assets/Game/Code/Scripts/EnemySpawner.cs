@@ -7,7 +7,6 @@ public class EnemySpawner : MonoBehaviour
 {
 
     [SerializeField] private List<Customer> _customerPrefabs;
-    private List<Customer> currentCustomers = new();
     public List<Vector2> spawnpoints;
     private List<Vector2> usedSpawns = new();
     public float spawnCooldown = 3.0f;
@@ -22,19 +21,12 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
+            yield return new WaitUntil(() => spawnpoints.Count > 0);
             yield return new WaitForSeconds(spawnCooldown);
-            if (spawnpoints.Count <= 0)
-            {
-                Debug.Log("Not spawning");
-                continue;
-            }
-            else
-            {
-                Customer customer = Instantiate(GetRandomCustomer());
-                Vector2 chosenSpawn = GetRandomSpawnpoint();
-                customer.OnFinish += () => FreeSpawnpoint(chosenSpawn);
-                customer.transform.position = chosenSpawn;
-            }
+            Customer customer = Instantiate(GetRandomCustomer());
+            Vector2 chosenSpawn = GetRandomSpawnpoint();
+            customer.OnFinish += () => FreeSpawnpoint(chosenSpawn);
+            customer.transform.position = chosenSpawn;
         }
     }
 
