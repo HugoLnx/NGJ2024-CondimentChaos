@@ -20,13 +20,8 @@ namespace Jam
         private Rigidbody2D _rbody;
         public Vector2 Position
         {
-            get => this._rbody.position;
-            set => this._rbody.position = value;
-        }
-
-        private void Awake()
-        {
-            this._rbody = this.GetComponent<Rigidbody2D>();
+            get => this.transform.position;
+            set => this.transform.position = value;
         }
 
         public void Setup(TrackWaypoint waypoint, Direction movementDirection)
@@ -38,15 +33,18 @@ namespace Jam
         public void MoveForward(float distance)
         {
             if (!IsReady) return;
-            float distanceToReach = Vector2.Distance(this.Position, this._targetWaypoint.Position);
+            Vector2 directionVector = this._targetWaypoint.Position - this.Position;
+            float distanceToReach = directionVector.magnitude;
+            Vector2 direction = directionVector.normalized;
             float initialMoveDistance = Mathf.Min(distance, distanceToReach);
-            this.Position += this._movementDirection.Vector * initialMoveDistance;
+            this.Position += direction * initialMoveDistance;
             if (distance >= distanceToReach)
             {
                 float remainingDistance = distance - distanceToReach;
                 Vector2 reachedPosition = this._targetWaypoint.Position;
                 TargetNextWaypoint();
-                this.Position = reachedPosition + this._movementDirection.Vector * remainingDistance;
+                direction = this._targetWaypoint.Position - this.Position;
+                this.Position = reachedPosition + direction * remainingDistance;
             }
         }
 

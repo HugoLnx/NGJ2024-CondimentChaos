@@ -33,11 +33,7 @@ namespace Jam
             {
                 this._trackObject.SetPreferredDirection(Direction.Left);
             }
-        }
-
-        private void FixedUpdate()
-        {
-            this._trackObject.MoveForward(this._speed * Time.fixedDeltaTime);
+            this._trackObject.MoveForward(this._speed * Time.deltaTime);
         }
     }
 }
