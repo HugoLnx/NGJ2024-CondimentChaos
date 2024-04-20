@@ -23,8 +23,9 @@ public class EnemySpawner : ASingleton<EnemySpawner>
     private const float InitialCooldown = 2f;
     private readonly WaitForEndOfFrame _waitForEndOfFrame = new();
 
-    private void Awake()
+    private new void Awake()
     {
+        base.Awake();
         System.Array customerTypes = System.Enum.GetValues(typeof(CustomerDifficulty));
         var customerTypesList = new List<CustomerDifficulty>();
         foreach (CustomerDifficulty type in customerTypes)
