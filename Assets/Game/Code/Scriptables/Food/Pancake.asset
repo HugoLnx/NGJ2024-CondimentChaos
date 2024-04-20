@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e509d86212fabbd43826730195185c8f, type: 3}
   m_Name: Pancake
   m_EditorClassIdentifier: 
-  <Texture>k__BackingField: {fileID: 2800000, guid: 5a073d3a5da94ae40aa041529e1a6950,
+  <Texture>k__BackingField: {fileID: 21300000, guid: 5a073d3a5da94ae40aa041529e1a6950,
     type: 3}
-  <FlavorTexture>k__BackingField: {fileID: 2800000, guid: 830a8b0e6f96a98418be29ad8e93558b,
+  <FlavorTexture>k__BackingField: {fileID: 21300000, guid: 830a8b0e6f96a98418be29ad8e93558b,
     type: 3}

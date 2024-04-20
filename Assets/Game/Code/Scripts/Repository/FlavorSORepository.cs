@@ -4,7 +4,7 @@ namespace Jam
 {
     public class FlavorSORepository : ARepository<FlavorSO>
     {
-        public static new FlavorSORepository Instance => Instance;
+        public static FlavorSORepository Repo => (FlavorSORepository)Instance;
 
         private void Start()
         {
