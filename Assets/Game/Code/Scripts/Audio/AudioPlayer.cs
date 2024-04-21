@@ -9,7 +9,8 @@ namespace Jam
 {
     public class AudioPlayer : ASingleton<AudioPlayer>
     {
-        [SerializeField] private AudioSource _source;
+        [SerializeField] private AudioSource _sfxSource;
+        [SerializeField] private AudioSource _backgroundSource;
         public void PlaySFX(params AudioClip[] clips)
         {
             if (clips.Length <= 0)
@@ -17,7 +18,7 @@ namespace Jam
                 Debug.LogWarning("SFX list length is 0");
                 return;
             }
-            _source.PlayOneShot(clips.Shuffle().First());
+            _sfxSource.PlayOneShot(clips.Shuffle().First());
         }
     }
 }

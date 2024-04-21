@@ -70,6 +70,7 @@ public class Customer : MonoBehaviour
             {
                 _isWaiting = false;
                 _animator.SetBool("waiting", _isWaiting);
+                _boxCollider.enabled = false;
                 PlayTimeOutAnimation();
             }
 
