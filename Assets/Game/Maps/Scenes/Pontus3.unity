@@ -3276,10 +3276,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Singletons
       objectReference: {fileID: 0}
+    - target: {fileID: 3718954709782925873, guid: ac94f15a8973c0b4e84202d7bc1d393d,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3718954709782925873, guid: ac94f15a8973c0b4e84202d7bc1d393d,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 4948177506688986806, guid: ac94f15a8973c0b4e84202d7bc1d393d,
         type: 3}
       propertyPath: _totalTime
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6771907089623707967, guid: ac94f15a8973c0b4e84202d7bc1d393d,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
