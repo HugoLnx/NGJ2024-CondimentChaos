@@ -14,6 +14,7 @@ public class UI : ASingleton<UI>
     [SerializeField] private TextMeshProUGUI _gameoverScoreText;
     [SerializeField] private GameObject _blackscreen;
     [SerializeField] private TextMeshProUGUI _timerText;
+    [SerializeField] private RectTransform _titleCover;
     private GameTime _gameTime;
 
     private void Start()
@@ -22,6 +23,16 @@ public class UI : ASingleton<UI>
         RefreshText();
         _gameTime = GameTime.Instance;
         GameTime.Instance.OnEnded += () => _blackscreen.SetActive(true);
+    }
+
+    public void ShowTitleCover()
+    {
+        _titleCover.gameObject.SetActive(true);
+    }
+
+    public void HideTitleCover()
+    {
+        _titleCover.gameObject.SetActive(false);
     }
 
     private void Update()
