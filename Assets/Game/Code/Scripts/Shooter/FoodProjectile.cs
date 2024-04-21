@@ -79,6 +79,7 @@ namespace Jam
             {
                 if (_food.FlavorTextures[i].Flavor == flavor)
                 {
+                    _flavor = flavor;
                     _flavorRenderer.sprite = _food.FlavorTextures[i].Sprite;
                     break;
                 }

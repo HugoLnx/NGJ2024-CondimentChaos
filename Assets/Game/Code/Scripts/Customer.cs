@@ -101,21 +101,21 @@ public class Customer : MonoBehaviour
     {
         if (collision.CompareTag("Food"))
         {
-            FoodProjectile food = collision.gameObject.GetComponent<FoodProjectile>();
-            if (food == null || !food.Launched) return;
-            if (food.Food == preferredFood)
+            FoodProjectile projectile = collision.gameObject.GetComponent<FoodProjectile>();
+            if (projectile == null || !projectile.Launched) return;
+            if (projectile.Food == preferredFood)
             {
                 _boxCollider.enabled = false;
-                if (food.Flavor == preferredFlavor)
+                if (projectile.Flavor == preferredFlavor)
                 {
-                    // Debug.Log("Full Points: " + scoreValue);
+                    Debug.Log("Full Points: " + scoreValue);
                     UI.Instance.IncreaseScore(scoreValue);
                     ShowScorePopup(scoreValue);
                 }
                 else
                 {
                     AudioPlayer.Instance.PlaySFX(_foodIsWrongMatchSfx);
-                    // Debug.Log("Reduced points: " + scoreValue / 3);
+                    Debug.Log("Reduced points: " + scoreValue / 3);
                     UI.Instance.IncreaseScore(scoreValue / 3);
                     ShowScorePopup(scoreValue / 3);
                 }
@@ -136,7 +136,7 @@ public class Customer : MonoBehaviour
     private void PlaySatisfiedAnimation()
     {
         _animator.SetTrigger("satisfied");
-        AudioPlayer.Instance.PlaySFX(_foodIsCorrectMatchSfx);
+        // AudioPlayer.Instance.PlaySFX(_foodIsCorrectMatchSfx);
 
     }
 

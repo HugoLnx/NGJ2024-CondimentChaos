@@ -258,7 +258,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6a316e973ed726e45908569b020b6dce, type: 3}
   - {fileID: 8300000, guid: 1e3f684a52501834dbe038a48c82707c, type: 3}
   - {fileID: 8300000, guid: 26f50aee5a4c3f14e82865c7ae798750, type: 3}
-  _foodIsWrongMatchSfx: []
+  _foodIsWrongMatchSfx:
+  - {fileID: 8300000, guid: 35fd2d2234321fc48b7f3bd22195eede, type: 3}
+  - {fileID: 8300000, guid: f16caa175cf2d2a4a87405c15418978e, type: 3}
   _foodIsUndelivered: {fileID: 8300000, guid: 8f70ac274537cb34aa4bed52114540f8, type: 3}
   _customerDestroyed: {fileID: 8300000, guid: f0a1c29375baf7c4aa8eeed05758c7d0, type: 3}
 --- !u!95 &768326863124784066
