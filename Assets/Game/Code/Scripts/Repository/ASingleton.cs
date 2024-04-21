@@ -8,15 +8,16 @@ namespace Jam
         public static T Instance { get; protected set; }
         protected void Awake()
         {
-            if (Instance == null)
-            {
-                Instance = this as T;
-                DontDestroyOnLoad(gameObject);
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
+            Instance = this as T;
+            // if (Instance == null)
+            // {
+            //     Instance = this as T;
+            //     DontDestroyOnLoad(gameObject);
+            // }
+            // else
+            // {
+            //     Destroy(gameObject);
+            // }
         }
     }
 }

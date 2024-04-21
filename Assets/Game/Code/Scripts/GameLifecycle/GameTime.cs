@@ -8,6 +8,7 @@ namespace Jam
     public class GameTime : ASingleton<GameTime>
     {
         [SerializeField] private int _totalTime = 60;
+        public int TotalTime => _totalTime;
         private float _currentTime = 0f;
         private bool _hasStarted;
 

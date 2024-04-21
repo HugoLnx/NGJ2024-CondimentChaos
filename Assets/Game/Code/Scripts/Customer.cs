@@ -171,7 +171,8 @@ public class Customer : MonoBehaviour
     {
         _scorePopup.text = SCOREPOPUPBASE + value;
         // withalpha is Hugo's function
-        _scorePopup.color = _scorePopup.color.WithAlpha(1);
+        Color c = _scorePopup.color;
+        _scorePopup.color = new Color(c.r, c.b, c.g, 1);
     }
 
     // destroys this gameobject

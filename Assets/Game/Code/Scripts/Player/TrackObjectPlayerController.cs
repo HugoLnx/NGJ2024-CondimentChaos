@@ -21,6 +21,11 @@ namespace Jam
             _animator = GetComponentInChildren<Animator>();
         }
 
+        private void Start()
+        {
+            GameTime.Instance.OnEnded += () => SetSpeed(0);
+        }
+
         private void OnChangedDirection()
         {
             AudioPlayer.Instance.PlaySFX(_movementSfx);
@@ -46,6 +51,11 @@ namespace Jam
             }
             _animator.SetBool(ParamHashIsVertical, _trackObject.Direction?.IsVertical == true);
             this._trackObject.MoveForward(this._speed * Time.deltaTime);
+        }
+
+        public void SetSpeed(int speed)
+        {
+            _speed = speed;
         }
     }
 }

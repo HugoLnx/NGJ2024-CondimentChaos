@@ -8,6 +8,7 @@ using PrefabDict = System.Collections.Generic.Dictionary<(CustomerType, Customer
 
 public class EnemySpawner : ASingleton<EnemySpawner>
 {
+    private Coroutine _spawnRoutine;
     [SerializeField] private List<Customer> _customerPrefabs;
     private PrefabDict _customerPrefabDict;
     private PrefabDict CustomerPrefabDict => _customerPrefabDict ??= BuildCustomerPrefabDict();
@@ -16,6 +17,8 @@ public class EnemySpawner : ASingleton<EnemySpawner>
 
     private List<Vector2> _spawnpoints;
     private List<Vector2> usedSpawns = new();
+
+    public bool shouldSpawn = true;
     private RandomEnumerableWeighted<CustomerDifficulty> _difficultyRandomizer;
 
     private DifficultyProperties CurrentProperties
@@ -48,13 +51,24 @@ public class EnemySpawner : ASingleton<EnemySpawner>
 
     public void StartSpawning()
     {
-        StartCoroutine(SpawnRoutine());
+        _spawnRoutine = StartCoroutine(SpawnRoutine());
+    }
+
+    public void StopSpawning()
+    {
+        StopCoroutine(_spawnRoutine);
+
+        Customer[] allCustomersRemaining = FindObjectsOfType<Customer>();
+        foreach (Customer cust in allCustomersRemaining)
+        {
+            Destroy(cust.gameObject);
+        }
     }
 
     private IEnumerator SpawnRoutine()
     {
         bool hasSpawnedBefore = false;
-        while (true)
+        while (shouldSpawn)
         {
             if (hasSpawnedBefore)
             {
