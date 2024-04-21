@@ -101,6 +101,7 @@ public class Customer : MonoBehaviour
         if (collision.CompareTag("Food"))
         {
             FoodProjectile food = collision.gameObject.GetComponent<FoodProjectile>();
+            if (food == null || !food.Launched) return;
             if (food.Food == preferredFood)
             {
                 _boxCollider.enabled = false;

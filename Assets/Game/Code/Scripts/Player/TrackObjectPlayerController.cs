@@ -8,14 +8,17 @@ namespace Jam
 {
     public class TrackObjectPlayerController : MonoBehaviour
     {
+        private readonly int ParamHashIsVertical = Animator.StringToHash("isVertical");
         [SerializeField] float _speed = 3f;
         [SerializeField] private AudioClip[] _movementSfx;
         private TrackObject _trackObject;
+        private Animator _animator;
 
         private void Awake()
         {
             this._trackObject = this.GetComponent<TrackObject>();
             this._trackObject.OnChangedDirection += OnChangedDirection;
+            _animator = GetComponentInChildren<Animator>();
         }
 
         private void OnChangedDirection()
@@ -41,6 +44,7 @@ namespace Jam
             {
                 this._trackObject.SetPreferredDirection(Direction.Left);
             }
+            _animator.SetBool(ParamHashIsVertical, _trackObject.Direction?.IsVertical == true);
             this._trackObject.MoveForward(this._speed * Time.deltaTime);
         }
     }

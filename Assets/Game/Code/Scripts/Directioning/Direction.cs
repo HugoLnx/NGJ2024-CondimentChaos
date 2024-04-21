@@ -27,8 +27,10 @@ namespace Jam
 
         public Vector2 Vector => _vector;
         public DirectionEnum Enumeration => _enumeration;
+        public bool IsVertical => Vector.y != 0f;
+        public bool IsHorizontal => Vector.x != 0f;
 
-        public Direction(Vector2 vector, DirectionEnum enumeration)
+        private Direction(Vector2 vector, DirectionEnum enumeration)
         {
             this._vector = vector;
             this._enumeration = enumeration;

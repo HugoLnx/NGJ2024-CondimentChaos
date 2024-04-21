@@ -28,12 +28,15 @@ namespace Jam
         public FoodSO Food => _food;
         public FlavorSO Flavor => _flavor;
 
+        public bool Launched { get; private set; }
+
         private void Awake()
         {
             _srenderer = GetComponentInChildren<SpriteRenderer>();
             _rbody = GetComponent<Rigidbody2D>();
             _srenderer.enabled = false;
             _flavorRenderer.enabled = false;
+            _rbody.simulated = false;
         }
 
         private void Start()
@@ -48,13 +51,27 @@ namespace Jam
         [Button]
         public void Setup(FoodSO food, Vector2 direction, float speed)
         {
-            Destroy(gameObject, _lifetime);
+            SetupView(food);
+            Launch(direction, speed);
+        }
+
+        public void SetupView(FoodSO food)
+        {
             this._food = food;
-            this._direction = direction;
-            this._speed = speed;
-            _rbody.velocity = _direction * _speed;
             _srenderer.sprite = food.Texture;
             _srenderer.enabled = true;
+        }
+
+        public void Launch(Vector2 direction, float speed, Vector2? position = null)
+        {
+            this.transform.SetParent(null);
+            Destroy(gameObject, _lifetime);
+            this._direction = direction;
+            this._speed = speed;
+            if (position.HasValue) _rbody.position = position.Value;
+            _rbody.velocity = _direction * _speed;
+            Launched = true;
+            _rbody.simulated = true;
         }
 
         public void Flavorize(FlavorSO flavor)
@@ -72,11 +89,13 @@ namespace Jam
 
         private void Update()
         {
+            if (!Launched) return;
             transform.Rotate(Vector3.forward, _rotateSpeed * Time.deltaTime);
         }
 
         private void OnCollisionEnter2D(Collision2D other)
         {
+            if (!Launched) return;
             bool hasHitFountain = other.collider.CompareTag(Fountain.Tag);
             if (!hasHitFountain) return;
 

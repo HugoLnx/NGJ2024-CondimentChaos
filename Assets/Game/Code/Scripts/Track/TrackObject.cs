@@ -25,6 +25,8 @@ namespace Jam
             set => this.transform.position = value;
         }
 
+        public Direction Direction => this._movementDirection;
+
         public void Setup(TrackWaypoint waypoint, Direction movementDirection)
         {
             bool hasChangedDirection = this._movementDirection != movementDirection;
