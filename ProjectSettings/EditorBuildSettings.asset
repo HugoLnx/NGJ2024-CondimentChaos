@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Game/Maps/Scenes/Pontus4.unity
-    guid: 35f3e0a2f23e21849a7f52970e8bf31e
+    path: Assets/Game/Maps/Scenes/Scene_Hugo2.unity
+    guid: a01c96109920c2148b4311fc53398fd7
   m_configObjects: {}
