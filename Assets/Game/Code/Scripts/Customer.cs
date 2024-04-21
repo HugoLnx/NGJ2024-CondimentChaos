@@ -107,14 +107,14 @@ public class Customer : MonoBehaviour
                 _boxCollider.enabled = false;
                 if (food.Flavor == preferredFlavor)
                 {
-                    Debug.Log("Full Points: " + scoreValue);
+                    // Debug.Log("Full Points: " + scoreValue);
                     UI.Instance.IncreaseScore(scoreValue);
                     ShowScorePopup(scoreValue);
                 }
                 else
                 {
                     AudioPlayer.Instance.PlaySFX(_foodIsWrongMatchSfx);
-                    Debug.Log("Reduced points: " + scoreValue / 3);
+                    // Debug.Log("Reduced points: " + scoreValue / 3);
                     UI.Instance.IncreaseScore(scoreValue / 3);
                     ShowScorePopup(scoreValue / 3);
                 }
