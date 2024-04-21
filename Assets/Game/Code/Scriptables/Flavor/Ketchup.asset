@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Ketchup
   m_EditorClassIdentifier: 
   <Color>k__BackingField: {r: 0.64705884, g: 0.1732343, b: 0.086274505, a: 1}
+  <FountainSprite>k__BackingField: {fileID: 21300000, guid: 289e5fb323b714242bcffa29d62f3de5,
+    type: 3}

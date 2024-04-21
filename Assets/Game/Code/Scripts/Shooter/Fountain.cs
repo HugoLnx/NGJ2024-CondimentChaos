@@ -16,7 +16,7 @@ namespace Jam
 
         private void Awake()
         {
-            _srenderer = GetComponent<SpriteRenderer>();
+            _srenderer = GetComponentInChildren<SpriteRenderer>();
         }
 
         private void Start()
@@ -27,7 +27,7 @@ namespace Jam
         public void Setup(FlavorSO flavor)
         {
             _flavor = flavor;
-            _srenderer.color = flavor.Color;
+            _srenderer.sprite = flavor.FountainSprite;
         }
     }
 }

@@ -6,5 +6,6 @@ namespace Jam
     public class FlavorSO : ScriptableObject
     {
         [field: SerializeField] public Color Color { get; private set; }
+        [field: SerializeField] public Sprite FountainSprite { get; private set; }
     }
 }

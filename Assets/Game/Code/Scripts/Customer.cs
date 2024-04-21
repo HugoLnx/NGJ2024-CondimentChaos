@@ -118,7 +118,6 @@ public class Customer : MonoBehaviour
                     ShowScorePopup(scoreValue / 3);
                 }
                 _isServed = true;
-                //AudioPlayer.Instance.PlaySFX(_foodIsUndelivered);                
                 Destroy(collision.gameObject);
             }
         }
@@ -127,7 +126,7 @@ public class Customer : MonoBehaviour
     // plays timeout animation
     private void PlayTimeOutAnimation()
     {
-        AudioPlayer.Instance.PlaySFX(_customerDestroyed);
+        AudioPlayer.Instance.PlaySFX(_foodIsUndelivered);
         _animator.SetTrigger("timeout");
     }
 
@@ -182,5 +181,6 @@ public class Customer : MonoBehaviour
     private void OnDestroy()
     {
         OnFinish?.Invoke();
+        AudioPlayer.Instance.PlaySFX(_customerDestroyed);
     }
 }
