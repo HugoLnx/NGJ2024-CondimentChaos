@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cyclesCount: 12
   _gameDuration: 120
-  _waveAmplitude: 0.1
+  _waveAmplitude: 0.15
 --- !u!114 &7547472717000977794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5edb54311f942b147aa846fd282b5190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _totalTime: 60
+  _totalTime: 120
 --- !u!1 &8435914997526843745
 GameObject:
   m_ObjectHideFlags: 0

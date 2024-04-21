@@ -812,6 +812,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreText: {fileID: 1195109468}
+  _gameoverScoreText: {fileID: 0}
+  _blackscreen: {fileID: 0}
   _timerText: {fileID: 740302516}
 --- !u!1 &1694294361
 GameObject:
