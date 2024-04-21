@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: OverlayA
       objectReference: {fileID: 0}
+    - target: {fileID: 3047604276281701445, guid: 465580d670cd1424c824a91caba1d1ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5212265826238162411, guid: 465580d670cd1424c824a91caba1d1ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -156,7 +161,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7da0007704a0d624ebb30d7c2a3ace01,
+      objectReference: {fileID: 21300000, guid: 032796f468454a8418d10d3d07be0c01,
         type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

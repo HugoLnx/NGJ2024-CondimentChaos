@@ -92,7 +92,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7da0007704a0d624ebb30d7c2a3ace01,
+      objectReference: {fileID: 21300000, guid: 40993ff932f8c9b49b935987f53c074d,
         type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -171,6 +171,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: OverlayB
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297296970788524339, guid: d95a097d5e70e5b42abe4c003a436185,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -8,6 +8,62 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1430966053477288833, guid: e15a8a1ee1c745b4f93ea203152895f8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716809897565408805, guid: e15a8a1ee1c745b4f93ea203152895f8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e84c064a3028fe4409282fe59b5a4fae,
+        type: 3}
+    - target: {fileID: 2241721971837838095, guid: e15a8a1ee1c745b4f93ea203152895f8,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2241721971837838095, guid: e15a8a1ee1c745b4f93ea203152895f8,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2241721971837838095, guid: e15a8a1ee1c745b4f93ea203152895f8,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2241721971837838095, guid: e15a8a1ee1c745b4f93ea203152895f8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 2241721971837838095, guid: e15a8a1ee1c745b4f93ea203152895f8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.224
+      objectReference: {fileID: 0}
+    - target: {fileID: 2488552283322402458, guid: e15a8a1ee1c745b4f93ea203152895f8,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2488552283322402458, guid: e15a8a1ee1c745b4f93ea203152895f8,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2488552283322402458, guid: e15a8a1ee1c745b4f93ea203152895f8,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2488552283322402458, guid: e15a8a1ee1c745b4f93ea203152895f8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.735
+      objectReference: {fileID: 0}
     - target: {fileID: 4702418721064808270, guid: e15a8a1ee1c745b4f93ea203152895f8,
         type: 3}
       propertyPath: m_Name
@@ -120,6 +176,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: OverlayMedium
+      objectReference: {fileID: 0}
+    - target: {fileID: 2011042503944865335, guid: 609a26fcdb354f64fb0425dde0a988ea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8788312150263633817, guid: 609a26fcdb354f64fb0425dde0a988ea,
         type: 3}

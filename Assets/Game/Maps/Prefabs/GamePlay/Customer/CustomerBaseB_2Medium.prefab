@@ -93,6 +93,12 @@ PrefabInstance:
       propertyPath: _timeToLeave
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 6270295134281063362, guid: 4979cda4d8ba7714b8d5fbf2b84025e7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e84c064a3028fe4409282fe59b5a4fae,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -120,6 +126,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: OverlayMedium
+      objectReference: {fileID: 0}
+    - target: {fileID: 2011042503944865335, guid: 609a26fcdb354f64fb0425dde0a988ea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8788312150263633817, guid: 609a26fcdb354f64fb0425dde0a988ea,
         type: 3}
