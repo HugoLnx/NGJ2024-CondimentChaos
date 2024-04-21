@@ -12,7 +12,9 @@ public class EnemySpawner : ASingleton<EnemySpawner>
     private PrefabDict _customerPrefabDict;
     private PrefabDict CustomerPrefabDict => _customerPrefabDict ??= BuildCustomerPrefabDict();
 
-    public List<Vector2> spawnpoints;
+    public List<Vector2> Spawnpoints => _spawnpoints ??= FindAndPrepareAllSpawnpoints();
+
+    private List<Vector2> _spawnpoints;
     private List<Vector2> usedSpawns = new();
     private RandomEnumerableWeighted<CustomerDifficulty> _difficultyRandomizer;
 
@@ -38,6 +40,12 @@ public class EnemySpawner : ASingleton<EnemySpawner>
         );
     }
 
+    private void Start()
+    {
+        // Enforce that the spawnpoints doesn't have srenderers
+        List<Vector2> points = Spawnpoints;
+    }
+
     public void StartSpawning()
     {
         StartCoroutine(SpawnRoutine());
@@ -50,7 +58,7 @@ public class EnemySpawner : ASingleton<EnemySpawner>
         {
             if (hasSpawnedBefore)
             {
-                yield return new WaitUntil(() => spawnpoints.Count > 0);
+                yield return new WaitUntil(() => Spawnpoints.Count > 0);
                 yield return WaitCooldown();
             }
             else
@@ -78,8 +86,8 @@ public class EnemySpawner : ASingleton<EnemySpawner>
 
     private Vector2 GetRandomSpawnpoint()
     {
-        Vector2 randomPoint = spawnpoints[Random.Range(0, spawnpoints.Count)];
-        spawnpoints.Remove(randomPoint);
+        Vector2 randomPoint = Spawnpoints[Random.Range(0, Spawnpoints.Count)];
+        Spawnpoints.Remove(randomPoint);
         usedSpawns.Add(randomPoint);
         return randomPoint;
     }
@@ -87,7 +95,7 @@ public class EnemySpawner : ASingleton<EnemySpawner>
     private void FreeSpawnpoint(Vector2 spawnpointToFree)
     {
         usedSpawns.Remove(spawnpointToFree);
-        spawnpoints.Add(spawnpointToFree);
+        Spawnpoints.Add(spawnpointToFree);
     }
 
     private Customer GetRandomCustomer()
@@ -102,17 +110,6 @@ public class EnemySpawner : ASingleton<EnemySpawner>
         return CustomerPrefabDict[(ctype, difficulty)];
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        using (Gizmosx.Color(Color.yellow))
-        {
-            foreach (Vector2 spawn in spawnpoints)
-            {
-                Gizmos.DrawWireSphere(spawn, 0.3f);
-            }
-        }
-    }
-
     private PrefabDict BuildCustomerPrefabDict()
     {
         var dict = new PrefabDict();
@@ -121,6 +118,19 @@ public class EnemySpawner : ASingleton<EnemySpawner>
             dict.Add((customer.Type, customer.Difficulty), customer);
         }
         return dict;
+    }
+
+    private const string SPAWNPOINT_TAG = "TableSpot";
+    private List<Vector2> FindAndPrepareAllSpawnpoints()
+    {
+        GameObject[] spots = GameObject.FindGameObjectsWithTag(SPAWNPOINT_TAG);
+        List<Vector2> spawnpoints = new();
+        foreach (GameObject spot in spots)
+        {
+            spot.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            spawnpoints.Add(spot.transform.position);
+        }
+        return spawnpoints;
     }
 
 }
