@@ -2,6 +2,9 @@
 Blast delicious foods through Cheese, Chocolate and Ketchup fountains to suit your customers' peculiar tastes, in this fast-paced shooter-on-rails.   
 [Play it now on itch.io](https://mekkmann.itch.io/condiment-chaos)
 
+<img alt="Title Screen" src="Screenshots/title-screen.png" width="480" height="270">
+<img alt="Gameplay" src="Screenshots/gameplay.png" width="480" height="270">
+
 ## Nordic Game Jam 2024
 * Game made for [Nordic Game Jam 2024](https://nordicgamejam.com/home)
 * Theme: Reflection (You kinda reflect food?)
