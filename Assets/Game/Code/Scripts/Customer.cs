@@ -103,24 +103,14 @@ public class Customer : MonoBehaviour
         {
             FoodProjectile projectile = collision.gameObject.GetComponent<FoodProjectile>();
             if (projectile == null || !projectile.Launched) return;
-            if (projectile.Food == preferredFood)
+            if (projectile.Flavor == preferredFlavor)
             {
                 _boxCollider.enabled = false;
-                if (projectile.Flavor == preferredFlavor)
-                {
-                    Debug.Log("Full Points: " + scoreValue);
-                    UI.Instance.IncreaseScore(scoreValue);
-                    ShowScorePopup(scoreValue);
-                }
-                else
-                {
-                    AudioPlayer.Instance.PlaySFX(_foodIsWrongMatchSfx);
-                    Debug.Log("Reduced points: " + scoreValue / 3);
-                    UI.Instance.IncreaseScore(scoreValue / 3);
-                    ShowScorePopup(scoreValue / 3);
-                }
+                Debug.Log("Points: " + scoreValue);
+                UI.Instance.IncreaseScore(scoreValue);
+                ShowScorePopup(scoreValue);
                 _isServed = true;
-                Destroy(collision.gameObject);
+                projectile.Served();
             }
         }
     }
