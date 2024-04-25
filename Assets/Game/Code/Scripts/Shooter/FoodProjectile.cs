@@ -109,5 +109,10 @@ namespace Jam
 
             Flavorize(fountain.Flavor);
         }
+
+        public void Served()
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

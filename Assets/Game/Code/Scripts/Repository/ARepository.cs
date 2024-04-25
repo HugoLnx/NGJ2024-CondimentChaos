@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using SensenToolkit.Rand;
 using UnityEngine;
 
 namespace Jam
@@ -9,10 +10,12 @@ namespace Jam
 
         [SerializeField] private List<T> _scriptableInstances;
         public List<T> All => _scriptableInstances;
+        private RandomEnumerableWithVariability<T> _randomizer;
+        private RandomEnumerableWithVariability<T> Randomizer => _randomizer ??= new RandomEnumerableWithVariability<T>(_scriptableInstances);
 
         public T GetRandom()
         {
-            return _scriptableInstances[Random.Range(0, _scriptableInstances.Count)];
+            return Randomizer.Select();
         }
     }
 }
