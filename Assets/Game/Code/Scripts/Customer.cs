@@ -19,17 +19,14 @@ public class Customer : MonoBehaviour
     public CustomerDifficulty Difficulty => _difficulty;
     private Animator _animator;
     private SpriteRenderer _foodPopupRenderer;
-    private SpriteRenderer _flavorRenderer;
     [SerializeField] private Slider _slider;
     public int scoreValue = 100;
-    public FoodSO preferredFood;
     public FlavorSO preferredFlavor;
 
     public float spawnRangeX = 8.0f;
     public float spawnRangeY = 2.76f;
 
     [SerializeField] private GameObject _foodPopup;
-    [SerializeField] private GameObject _flavorOverlay;
     [SerializeField] private TextMeshProUGUI _scorePopup;
     [SerializeField] private BoxCollider2D _boxCollider;
     [SerializeField] private AudioClip _spawnSfx;
@@ -44,7 +41,6 @@ public class Customer : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _foodPopupRenderer = _foodPopup.GetComponent<SpriteRenderer>();
-        _flavorRenderer = _flavorOverlay.GetComponent<SpriteRenderer>();
         _boxCollider = GetComponent<BoxCollider2D>();
     }
 
@@ -53,9 +49,8 @@ public class Customer : MonoBehaviour
     {
         SetSliderMaxValue(_timeToLeave);
         SetSliderCurrentValue(_timeToLeave);
-        preferredFood = FoodSORepository.Repo.GetRandom();
         preferredFlavor = FlavorSORepository.Repo.GetRandom();
-        SetFoodPopup();
+        SetFlavorPopup();
         AudioPlayer.Instance.PlaySFX(_spawnSfx);
     }
 
@@ -84,17 +79,9 @@ public class Customer : MonoBehaviour
     }
 
     // sets sprites of food popup and flavor overlay
-    private void SetFoodPopup()
+    private void SetFlavorPopup()
     {
-        _foodPopupRenderer.sprite = preferredFood.Texture;
-        for (int i = 0; i < preferredFood.FlavorTextures.Count; i++)
-        {
-            if (preferredFood.FlavorTextures[i].Flavor == preferredFlavor)
-            {
-                _flavorRenderer.sprite = preferredFood.FlavorTextures[i].Sprite;
-                break;
-            }
-        }
+        _foodPopupRenderer.sprite = preferredFlavor.Sprite;
     }
     // if a trigger enters the collider
     private void OnTriggerEnter2D(Collider2D collision)

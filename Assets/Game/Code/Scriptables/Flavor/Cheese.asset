@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e097bac4d569084986c42d5e2239946, type: 3}
   m_Name: Cheese
   m_EditorClassIdentifier: 
-  <Color>k__BackingField: {r: 0.64427, g: 0.645283, b: 0.08644357, a: 1}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 21c8cdac99c51934ca800ca0259abc96,
+    type: 3}
   <FountainSprite>k__BackingField: {fileID: 21300000, guid: 21c8cdac99c51934ca800ca0259abc96,
     type: 3}
